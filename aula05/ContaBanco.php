@@ -12,7 +12,8 @@ class ContaBanco
     public function __construct()
     {
         $this->status = false;
-        $this->saldo = 0;                
+        $this->saldo = 0; 
+        echo "<p>Conta criada com sucesso!</p>";               
     }
 
     //Métodos da Classe
@@ -39,34 +40,43 @@ class ContaBanco
             echo "<p>Conta em débito</p>";
         } else {
             $this->setStatus(false);
+            echo "<p>Conta de {$this->getDono()} fechada com sucesso</p>";
         }
     }
 
     public function depositar($valor) {
         if($this->getStatus()) {
             $this->setSaldo($this->getSaldo()+$valor);
+            echo "<p>Depósito de $valor na conta de {$this->getDono()}</p>";
         } else {
-            echo "<p>Impossível depositar</p>";
+            echo "<p>Impossível depositar, conta fechada</p>";
         }
     }
 
     public function sacar($valor) {
-        if($this->getStatus() && $this->getSaldo()>=$valor) {
-            $this->setSaldo($this->getSaldo()-$valor);
+        if($this->getStatus()) {
+            if ($this->getSaldo()>=$valor) {
+                $this->setSaldo($this->getSaldo()-$valor);
+                echo "<p>Saque no valor de $valor autorizado na conta de {$this->getDono()}</p>";
+            } else {
+                echo "<p>Saldo insuficiente para saque</p>";
+            }
         } else {
-            echo "<p>Impossível sacar</p>";
+            echo "<p>Impossível sacar, conta fechada</p>";
         }
     }
 
     public function pagarMensal() {
         if($this->getStatus()) {
             if($this->getTipo()=='CC') {
-                $this->setSaldo($this->getSaldo()-12);
+                $v = 12;
             } else if($this->getTipo()=='CP'){
-                $this->setSaldo($this->getSaldo()-20);
+                $v = 20;
             }
+            $this->setSaldo($this->getSaldo()-$v);
+            echo "<p>Mensalidade de $v debitada da conta de {$this->getDono()}</p>";
         } else {
-            echo "<p>Impossível pagar</p>";
+            echo "<p>Impossível pagar, conta fechada</p>";
         }
     }
 
