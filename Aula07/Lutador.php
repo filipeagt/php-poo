@@ -99,11 +99,11 @@ class Lutador
     {
         if($this->peso < 52.2) {
             $this->categoria = 'Inválido';
-        }else if($this->peso <= 70.3) {
+        } elseif($this->peso <= 70.3) {
             $this->categoria = 'Leve';
-        } else if($this->peso <= 83.9) {
+        } elseif($this->peso <= 83.9) {
             $this->categoria = 'Médio';
-        } else if($this->peso <= 120.2) {
+        } elseif($this->peso <= 120.2) {
             $this->categoria = 'Pesado';
         } else {
             $this->categoria = 'Inválido';
@@ -127,18 +127,20 @@ class Lutador
 
     public function apresentar()
     {
-        echo "<p><br>Lutador: ".$this->getNome();
+        echo "<p>--------------------</p>";
+        echo "<p>Lutador: ".$this->getNome();
         echo "<br>Origem: ".$this->getNacionalidade();
         echo "<br>".$this->getIdade()." anos";
         echo "<br>".$this->getAltura()." m de altura";
         echo "<br>Pesando: ".$this->getPeso()."kg";
         echo "<br>Ganhou: ".$this->getVitorias();
-        echo "<br>Perdeu:".$this->getDerrotas();
+        echo "<br>Perdeu: ".$this->getDerrotas();
         echo "<br>Empatou: ".$this->getEmpates()."</p>";
     }
 
     public function status()
     {
+        echo "<p>--------------------</p>";
         echo "<p>".$this->getNome();
         echo " é um peso ".$this->getCategoria()." ";
         echo $this->getVitorias()." vitórias ";
