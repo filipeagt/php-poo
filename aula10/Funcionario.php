@@ -7,7 +7,7 @@ class Funcionario extends Pessoa
 
     public function mudarTrabalho()
     {
-
+        $this->setTrabalhando(!$this->getTrabalhando());
     }
 
     /*public function __construct($setor,  $trabalhando)

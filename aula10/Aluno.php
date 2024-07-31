@@ -7,7 +7,7 @@ class Aluno extends Pessoa
 
     public function cancelarMat()
     {
-        
+        echo '<p>A matrícula será cancelada.</p>';
     }
 
     /*public function __construct($matr,  $curso)

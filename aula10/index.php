@@ -27,6 +27,13 @@
     $p3->setSalario(10000.75);
     $p4->setSetor('Estoque');
 
+    $p1->setSexo('F');
+    $p2->setSexo('M');
+
+    $p3->receberAum(100);
+    $p4->mudarTrabalho();
+    $p2->cancelarMat();
+
     print_r($p1);
     print_r($p2);
     print_r($p3);
