@@ -16,7 +16,7 @@ class Bolsista extends Aluno
 
     public function __construct()
     {
-        $this->bolsa = 50;
+        $this->bolsa = 10;
     }
 
     public function getBolsa()
