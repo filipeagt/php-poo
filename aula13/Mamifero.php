@@ -2,7 +2,7 @@
 require_once 'Animal.php';
 class Mamifero extends Animal
 {
-    private $corPelo;
+    protected $corPelo;
 
     public function locomover()
     {
