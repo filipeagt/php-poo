@@ -5,9 +5,9 @@ abstract class Animal
     protected $idade;
     protected $membros;
 
-    public abstract function locomover();
-    public abstract function alimentar();
-    public abstract function emitirSom();
+    abstract function locomover();
+    abstract function alimentar();
+    abstract function emitirSom();
 
     public function getPeso()
     {

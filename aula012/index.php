@@ -9,35 +9,26 @@
 <pre>
 <?php
 require_once 'Mamifero.php';
+require_once 'Reptil.php';
+require_once 'Peixe.php';
+require_once 'Ave.php';
 require_once 'Canguru.php';
 require_once 'Cachorro.php';
+require_once 'Cobra.php';
+require_once 'Tartaruga.php';
+require_once 'Goldfish.php';
+require_once 'Arara.php';
+
 $m = new Mamifero;
+$a = new Ave;
+$r = new Reptil;
 $c = new Canguru;
 $k = new Cachorro;
+$t = new Tartaruga;
 
-$m->setPeso(5.70);
-$m->setIdade(8);
-$m->setMembros(4);
-$m->locomover();
-$m->alimentar();
 $m->emitirSom();
-
-$c->setPeso(55.30);
-$c->setIdade(3);
-$c->setMembros(4);
-$c->locomover();
-$c->alimentar();
-$c->emitirSom();
-$c->usarBolsa();
-
-$k->setPeso(3.94);
-$k->setIdade(5);
-$k->setMembros(4);
-$k->locomover();
-$k->alimentar();
 $k->emitirSom();
-$k->abanarRabo();
-$k->enterrarOsso();
+$c->emitirSom();
 ?>
 </pre>
 </body>
