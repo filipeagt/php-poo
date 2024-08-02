@@ -6,9 +6,19 @@ abstract class Pessoa
     protected $sexo;
     protected $experiencia;
 
-    protected function ganharExp()
+    protected function ganharExp($n)
     {
+        $this->setExperiencia($this->getExperiencia() + $n);
     }
+
+    public function __construct($nome,  $idade,  $sexo)
+    {
+        $this->nome = $nome;
+        $this->idade = $idade;
+        $this->sexo = $sexo;
+        $this->experiencia = 0;
+    }
+
 
     public function getNome()
     {
@@ -30,22 +40,22 @@ abstract class Pessoa
         return $this->experiencia;
     }
 
-    public function setNome($nome): void
+    public function setNome($nome)
     {
         $this->nome = $nome;
     }
 
-    public function setIdade($idade): void
+    public function setIdade($idade)
     {
         $this->idade = $idade;
     }
 
-    public function setSexo($sexo): void
+    public function setSexo($sexo)
     {
         $this->sexo = $sexo;
     }
 
-    public function setExperiencia($experiencia): void
+    public function setExperiencia($experiencia)
     {
         $this->experiencia = $experiencia;
     }
