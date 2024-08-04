@@ -16,12 +16,11 @@ $v[1] = new Video('Aula 12 PHP');
 $v[2] = new Video('Aula 15 HTML5');
 $g[0] = new Gafanhoto('Jubileu', 26, "M", 'juba');
 $g[1] = new Gafanhoto('Creuza', 12, "F", "Creuzita");
-$u = array (new Visualizacao($g[0],$v[0]),
-            new Visualizacao($g[0],$v[1]),
-            new Visualizacao($g[0],$v[2]),
-            new Visualizacao($g[1],$v[0]),
-            new Visualizacao($g[1],$v[2]));
-print_r($u);
+$vis[0] = new Visualizacao($g[0], $v[2]);
+$vis[1] = new Visualizacao($g[0],$v[1]);
+$vis[0]->avaliar();
+$vis[1]->avaliarPorc(85);
+print_r($vis);
 ?>
 </pre>
 </body>
